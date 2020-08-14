@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+    <defaultValues>
+        <name multilanguage="true">Turbosms.ua</name>
+        <description multilanguage="true">интеграция доставки смс уведомлений через сервис turbosms.ua</description>
+        <version>4.0.0</version>
+        <author>Viktor Melnikov</author>
+    </defaultValues>
+</config>
