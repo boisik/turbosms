@@ -36,13 +36,13 @@ class Sender extends \Alerts\Model\SMS\AbstractSender
         $config = \RS\Config\Loader::byModule($this);
 
         // Если не указан логин, отправка не выполняется
-        if(!$config['smsru_apiid']){
+        if(!$config['smsToken']){
             return;
         }
 
 
-        $api = new Smsru ( $config['smsru_apiid'] );
-        $res = $api->sendSMS ( $phone_numbers , $text , $config['smsru_sender'], $config['smsru_translit'] );
+        $api = new Turbosms();
+        $res = $api->sendSMS ( $phone_numbers , $text , $config['smsSender']);
         if($res == false){
             $response = $api->getResponse ();
             throw new \Exception($response['msg'], $response['code']);
