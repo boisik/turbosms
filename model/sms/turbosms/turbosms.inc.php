@@ -92,7 +92,7 @@ class Turbosms
 
          $response = file_get_contents($url, false, $context);
 
-var_dump($params);
+
         if ($config['write_log']) {
             $log_str = serialize($response);
             $this->log_file->append($log_str);
