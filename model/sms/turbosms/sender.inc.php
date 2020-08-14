@@ -1,8 +1,5 @@
 <?php
-/**
-*
-* @copyright Copyright (c) Николай Кравцов (http://vampirus.ru)
-*/
+
 namespace Aturbosms\Model\SMS\Turbosms;
 
 class Sender extends \Alerts\Model\SMS\AbstractSender

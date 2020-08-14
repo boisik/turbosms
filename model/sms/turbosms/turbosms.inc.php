@@ -1,8 +1,6 @@
 <?php
 
-/**
- * Класс для работы с сервисом sms.ru
- */
+
 namespace Aturbosms\Model\SMS\Turbosms;
 
 class Turbosms
@@ -17,7 +15,7 @@ class Turbosms
 
     function __construct()
     {
-      $this->log_file = \RS\Helper\Log::file(\Setup::$PATH.\Setup::$STORAGE_DIR.'/logs/tusbosms.log');
+      $this->log_file = \RS\Helper\Log::file(\Setup::$PATH.\Setup::$STORAGE_DIR.'/logs/turbosms.log');
     }
 
 
@@ -35,6 +33,15 @@ class Turbosms
     {
         if (!is_array($recipients)) {
             $recipients = array('0' => $recipients);
+        }
+        foreach ($recipients as $key=>$number){
+            $number = str_replace([' ', '(', ')', '-'], '', $number);
+
+            if (strpos($number, '0') == '0'){
+
+                $number = '+38'.$number;
+            }
+            $recipients[$key]= $number;
         }
 
 
